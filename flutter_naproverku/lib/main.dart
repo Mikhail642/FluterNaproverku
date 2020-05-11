@@ -71,31 +71,7 @@ class MyFormState extends State {
 
 
 
-        RaisedButton(
-          onPressed: () {
-            if (_formKey.currentState.validate()) {
-              Colors.red;
-              String text;
-              Scaffold.of(context).showSnackBar(
-                  SnackBar(content: Text(text), backgroundColor: Colors.blue));
-            }
-            if (_gender == null) {
-              RaisedButton(onPressed: (null));
-            } else {
-              (RaisedButton(onPressed: () {}));
-            }
-            if (_agreement == false) {
-              RaisedButton(onPressed: (null));
-            } else {
-              (RaisedButton(onPressed: () {}));
-            }
-            if (Text == null) {
-              RaisedButton(onPressed: (null));
-            } else {
-              RaisedButton(onPressed: () {});
-            }
-          },
-            child: const Text('Проверить'), color:Colors.blue, textColor:Colors.white),
+      RaisedButton(onPressed: _formKey.currentState.validate() ? () {Text('Заполните форму');} : null, child: const Text('Проверить'),)
         ],)));
   }
 }
